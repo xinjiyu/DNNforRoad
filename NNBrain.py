@@ -24,8 +24,8 @@ import numpy
 import matplotlib.pyplot as plot
 
 Batch_Size = 10
-InputLayerUnits = 10
-HiddenLayerUnits = 5
+InputLayerUnits = 50
+HiddenLayerUnits = 2
 OutputLayerUnits = 1
 LearningRate = 0.01
 
@@ -51,6 +51,7 @@ class Brain(object):
 
 		self.sess.run(tf.global_variables_initializer())
 
+
 	def build_net(self):
 		w_initializer, b_initializer = tf.random_normal_initializer(0., 0.3), tf.constant_initializer(0.1)
 		with tf.variable_scope('Network'):
@@ -70,10 +71,10 @@ class Brain(object):
 
 	def build_trainOp(self):
 		with tf.variable_scope('Loss'):
-			self.loss = tf.reduce_mean(tf.squared_difference(self.real_y,self.calc_y))
+			self.loss = tf.reduce_mean(tf.square(self.real_y-self.calc_y))
 
 		with tf.variable_scope('TrainOp'):
-			self.trainOp = tf.train.AdamOptimizer(LearningRate).minimize(self.loss)
+			self.trainOp = tf.train.GradientDescentOptimizer(LearningRate).minimize(self.loss)
 
 	def store_samples(self, samples):
 		self.samples = samples
