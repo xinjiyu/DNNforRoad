@@ -1,26 +1,6 @@
 # NNBrain
-
-'''
-// ┏┛ ┻━━━━━┛ ┻┓
-// ┃　　　　　　 ┃
-// ┃　　　━　　　┃
-// ┃　┳┛　  ┗┳　┃
-// ┃　　　　　　 ┃
-// ┃　　　┻　　　┃
-// ┃　　　　　　 ┃
-// ┗━┓　　　┏━━━┛  Code is far away from bug with the animal protecting
-//   ┃　　　┃   神兽保佑
-//   ┃　　　┃   代码无BUG！
-//   ┃　　　┗━━━━━━━━━┓
-//   ┃　　　　　　　    ┣┓
-//   ┃　　　　         ┏┛
-//   ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛
-//     ┃ ┫ ┫   ┃ ┫ ┫
-//     ┗━┻━┛   ┗━┻━┛
-'''
-
 import tensorflow as tf
-import numpy
+import numpy as np
 import matplotlib.pyplot as plot
 
 Batch_Size = 10
